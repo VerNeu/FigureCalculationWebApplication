@@ -6,11 +6,11 @@ import algoFamilyVolumeCalculation.VolumeCalculationPyramide4;
 
 public class Pyramide4 extends Figure{
 	
-	public Pyramide4 (double length, double width, double height) {
+	public Pyramide4 (double base, double width, double height) {
 		super ();
-		this.length = length;
-		this.width = width;
-		this.height = height;
+		this.param1 = base;
+		this.param2 = width;
+		this.param3 = height;
 		
 		floorCalculation = new FloorCalculationSquare();
 		surfaceCalculation = new SurfaceCalculationPyramide4();
@@ -18,4 +18,3 @@ public class Pyramide4 extends Figure{
 	}
 
 }
-

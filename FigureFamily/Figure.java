@@ -7,16 +7,16 @@ import algoFamilyVolumeCalculation.VolumeCalculation;
 
 public abstract class Figure {
 	
-	protected double length;
-	protected double width;
-	protected double height;
-	protected double radius;
-	protected double pi = Math.PI;
-	protected double dummy = 1;
+	public static Figure figure;
 	
-	protected double floorResult;
-	protected double surfaceResult;
-	protected double volumeResult;
+	public double param1;
+	public double param2;
+	public double param3;
+	private double roundingScale = Math.pow(10, 2);
+	
+	public double floorResult;
+	public double surfaceResult;
+	public double volumeResult;
 	
 	protected FloorCalculation floorCalculation;
 	protected SurfaceCalculation surfaceCalculation;
@@ -24,50 +24,43 @@ public abstract class Figure {
 	
 	public Figure() {}
 	
-	public void roundFloorResult () {
-		double scale = Math.pow(10, 2);
-		floorResult = Math.floor(floorResult * scale) / scale;
+	public void roundFloorResult () { 
+		floorResult = Math.floor(floorResult * roundingScale) / roundingScale;
 	}
 	
 	public void roundSurfaceResult () {
-		double scale = Math.pow(10, 2);
-		surfaceResult = Math.floor(surfaceResult * scale) / scale;
+		surfaceResult = Math.floor(surfaceResult * roundingScale) / roundingScale;
 	}
 	
 	public void roundVolumeResult () {
-		double scale = Math.pow(10, 2);
-		volumeResult = Math.floor(volumeResult * scale) / scale;
+		volumeResult = Math.floor(volumeResult * roundingScale) / roundingScale;
 	}
 
-	public void giveFloorResult(double length_radius, double width_pi) {
-		floorResult = floorCalculation.calculateFloor(length_radius, width_pi);
+	public void giveFloorResult(double param1, double param2) {
+		floorResult = floorCalculation.calculateFloor(param1, param2);
 		roundFloorResult ();
-		System.out.println(floorResult);
 	}
 	
-	public void giveSurfaceResult(double length_radius, double width_pi, double height_dummy) {
-		surfaceResult = surfaceCalculation.calculateSurface(length_radius, width_pi, height_dummy);
-		roundSurfaceResult ();
-		System.out.println(surfaceResult);	
+	public void giveSurfaceResult(double param1, double param2, double param3) {
+		surfaceResult = surfaceCalculation.calculateSurface(param1, param2, param3);
+		roundSurfaceResult ();	
 	}
 	
-	public void giveVolumeResult(double length_radius, double width_pi, double height_dummy) {
-		volumeResult = volumeCalculation.calculateVolume(length_radius, width_pi, height_dummy);
-		roundVolumeResult ();
-		System.out.println(volumeResult);		
+	public void giveVolumeResult(double param1, double param2, double param3) {
+		volumeResult = volumeCalculation.calculateVolume(param1, param2, param3);
+		roundVolumeResult ();		
 	}
 	
-	public void giveAllResults(double length_radius, double width_pi, double height_dummy) {
-		
-		floorResult = floorCalculation.calculateFloor(length_radius, width_pi);
-		roundFloorResult ();
-		surfaceResult = surfaceCalculation.calculateSurface(length_radius, width_pi, height_dummy);
-		roundSurfaceResult ();
-		volumeResult = volumeCalculation.calculateVolume(length_radius, width_pi, height_dummy);
-		roundVolumeResult ();
-		System.out.println(floorResult);
+	public void giveAllResults(double param1, double param2, double param3) {
+		giveFloorResult(param1, param2);
+		giveSurfaceResult(param1, param2, param3);
+		giveVolumeResult(param1, param2, param3);	
+	}
+}
+
+stem.out.println(floorResult);
 		System.out.println(surfaceResult);
-		System.out.println(volumeResult);
+		System.out.println(volumeResult);*/
 	}
 	
 }
