@@ -8,9 +8,9 @@ public class Dice extends Figure{
 	
 	public Dice (double length) {
 		super ();
-		this.length = length;
-		this.width = length;
-		this.height = length;
+		this.param1 = length;
+		this.param2 = length;
+		this.param3 = length;
 		
 		floorCalculation = new FloorCalculationSquare();
 		surfaceCalculation = new SurfaceCalculationCube();

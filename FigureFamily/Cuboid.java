@@ -8,9 +8,9 @@ public class Cuboid extends Figure{
 	
 	public Cuboid (double length, double width, double height) {
 		super ();
-		this.length = length;
-		this.width = width;
-		this.height = height;
+		this.param1 = length;
+		this.param2 = width;
+		this.param3 = height;
 		
 		floorCalculation = new FloorCalculationSquare();
 		surfaceCalculation = new SurfaceCalculationCube();

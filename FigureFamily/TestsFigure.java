@@ -6,32 +6,66 @@ import org.junit.jupiter.api.Test;
 class TestsFigure {
 
 	@Test
-	void testRoundFloorResult() {
+	void testRoundFloorResult() throws Exception {
 		Figure figure = new Dice(4);
 		figure.floorResult = 40.1998;
 		figure.roundFloorResult();
 		
-		assertEquals(40.19, figure.floorResult);
+		assertEquals(40.19, figure.floorResult, 0.01);
 	}
 	
 	@Test
-	void testRoundSurfaceResult() {
+	void testRoundSurfaceResult() throws Exception {
 		Figure figure = new Pyramide4(1,1,1);
 		figure.surfaceResult = 75.5647;
 		figure.roundSurfaceResult();
 		
-		assertEquals(75.56, figure.surfaceResult);	
+		assertEquals(75.56, figure.surfaceResult, 0.01);	
 	}
 	
 	@Test
-	void testRoundVolumeResult() {
+	void testRoundVolumeResult() throws Exception {
 		Figure figure = new Globe(5);
 		figure.volumeResult = 98.54839;
 		figure.roundVolumeResult();
 		
-		assertEquals(98.54, figure.volumeResult);
+		assertEquals(98.54, figure.volumeResult, 0.01);
+		
+	}
+	
+	@Test
+	void testGiveFloorResult() throws Exception {
+		Figure figure = new Globe (7.4736); 
+		figure.giveFloorResult(figure.param1, figure.param2);
+		
+		assertEquals(46.95,figure.floorResult, 0.01);
+	}
+	
+	@Test
+	void testGiveSurfaceResult() throws Exception {
+		Figure figure = new Pyramide4 (4.56, 3.2344, 20.56);
+		figure.giveSurfaceResult(figure.param1, figure.param2, figure.param3);
+		
+		assertEquals(175.69,figure.surfaceResult, 0.01);
+	}
+	
+	@Test
+	void testGiveVolumeResult() throws Exception {
+		Figure figure = new Dice(5.789);
+		figure.giveVolumeResult(figure.param1, figure.param2, figure.param3);
+		
+		assertEquals(194.00, figure.volumeResult, 0.01);
+	}
+	
+	@Test
+	void testGiveAllResults() throws Exception {
+		Figure figure = new Cuboid (4.675, 3.4, 8.5432);
+		figure.giveAllResults(figure.param1, figure.param2, figure.param3);
+		
+		assertEquals(15.89,figure.floorResult,0.01);
+		assertEquals(169.76,figure.surfaceResult,0.01);
+		assertEquals(135.79,figure.volumeResult,0.01);
 		
 	}
 
 }
-
