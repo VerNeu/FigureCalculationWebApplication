@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Konfiguration</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="title" class="centerContainer">
+        <h1>Formen-Rechner</h1>
+    </div>
+    <div>
+        <div id="shapeChoice" class="centerContainer">
+            <input type="radio" id="dice" name="params" value="dice" checked>
+            <lable for="dice">Würfel</lable> <br>
+            <input type="radio" id="cuboid" name="params" value="cuboid">
+            <lable for="cuboid">Quader</lable> <br>
+            <input type="radio" id="globe" name="params" value="globe">
+            <lable for="globe">Kugel</lable> <br>
+            <input type="radio" id="pyramide4" name="params" value="pyramide4">
+            <lable for="pyramide4">Vierseitige Pyramide</lable> <br>
+        </div>
+        <div id="diceFormular" class="centerContainer">
+            <form method="get" action="FigureFormServlet">
+                <input type="hidden" name="params" value="dice">
+                <lable for="params">Seitenlänge (cm): </lable>
+                <input type="text" id="params" name="params">
+                <div class="centerContainer">
+                    <input id="calculate" type="submit" value="Berechnen">
+                </div>
+            </form>
+        </div>
+        <div id="cuboidFormular" class="centerContainer">
+            <form method="get" action="FigureFormServlet">
+                <input type="hidden" name="params" value="cuboid">  
+                <lable for="params">Länge (cm): </lable>
+                <input type="text" id="params" name="params"><br>
+                <lable for="params">Breite (cm): </lable>
+                <input type="text" id="params" name="params"><br>
+                <lable for="params">Höhe (cm): </lable>
+                <input type="text" id="params" name="params">
+                <div class="centerContainer">
+                    <input id="calculate" type="submit" value="Berechnen">
+                </div>
+            </form>
+        </div>
+        <div id="globeFormular" class="centerContainer">
+            <form method="get" action="FigureFormServlet">
+                <input type="hidden" name="params" value="globe">
+                <lable for="params">Radius (cm): </lable>
+                <input type="text" id="params" name="params">
+                <div class="centerContainer">
+                    <input id="calculate" type="submit" value="Berechnen">
+                </div>
+            </form>
+        </div>
+        <div id="pyramide4Formular" class="centerContainer">
+            <form method="get" action="FigureFormServlet">
+                <input type="hidden" name="params" value="pyramide4">  
+                <lable for="params">Basis (cm): </lable>
+                <input type="text" id="params" name="params"><br>
+                <lable for="params">Tiefe (cm): </lable>
+                <input type="text" id="params" name="params"><br>
+                <lable for="params">Höhe (cm): </lable>
+                <input type="text" id="params" name="params">
+                <div class="centerContainer">
+                    <input id="calculate" type="submit" value="Berechnen">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
