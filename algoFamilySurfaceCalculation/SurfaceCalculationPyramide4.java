@@ -9,4 +9,3 @@ public class SurfaceCalculationPyramide4 implements SurfaceCalculation{
 	}
 
 }
-
