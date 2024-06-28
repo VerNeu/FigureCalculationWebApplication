@@ -2,6 +2,6 @@ package algoFamilySurfaceCalculation;
 
 public interface SurfaceCalculation {
 	
-	public double calculateSurface (double length_radius, double width_pi, double height_dummy) ;
+	public double calculateSurface (double param1, double param2, double param3) ;
 
 }
