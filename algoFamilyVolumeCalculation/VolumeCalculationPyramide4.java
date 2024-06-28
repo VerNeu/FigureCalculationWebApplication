@@ -8,4 +8,3 @@ public class VolumeCalculationPyramide4 implements VolumeCalculation{
 	}
 
 }
-
