@@ -57,10 +57,3 @@ public abstract class Figure {
 		giveVolumeResult(param1, param2, param3);	
 	}
 }
-
-stem.out.println(floorResult);
-		System.out.println(surfaceResult);
-		System.out.println(volumeResult);*/
-	}
-	
-}
