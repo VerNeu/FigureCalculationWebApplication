@@ -15,22 +15,21 @@
     </div>
     <div class="centerContainer">
     
-    <% String figure = String.valueOf(request.getAttribute("shape"));
-    out.println(figure);
+    <% Object shape = request.getAttribute("shape");
     
-    if (figure == "dice"){%>
+    if (shape.equals("dice")){%>
         <h2>Würfel</h2>
         <p>Grundfläche: ${floorResult} cm²</p>
         <p>Oberfläche: ${surfaceResult} cm²</p>
         <p>Volumen: ${volumeResult} cm³</p>
     <%} 
-    else if (figure == "cuboid"){%>
+    else if (shape.equals("cuboid")){%>
 		<h2>Quader</h2>
         <p>Grundfläche: ${floorResult} cm²</p>
         <p>Oberfläche: ${surfaceResult} cm²</p>
         <p>Volumen: ${volumeResult} cm³</p>
     <%} 
-   	else if (figure == "globe"){%>
+   	else if (shape.equals("globe")){%>
     	<h2>Kugel</h2>
         <p>Querschnittsfläche: ${floorResult} cm²</p>
         <p>Oberfläche: ${surfaceResult} cm²</p>
